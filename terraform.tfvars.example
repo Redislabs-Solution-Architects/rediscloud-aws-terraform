@@ -1,0 +1,9 @@
+
+# Access key and Secret key for Redis Cloud account [REDISCLOUD_ACCESS_KEY, REDISCLOUD_SECRET_KEY] 
+rediscloud_creds = ["myAccessKeydklfajdlfkasljf","MySecretKeyKLDFJDLSKFJSDL"]
+
+# Last 4 digits for payment method 
+cc_last_4 = "0000"
+
+# redis cloud subscription name
+rediscloud_subscription_name = "myDemoSubscription"
