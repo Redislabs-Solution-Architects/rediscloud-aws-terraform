@@ -1,7 +1,13 @@
 # rediscloud-terraform
 How to deploy a rediscloud subscription from terraform.
 
-These instructions also explain how to get started with Terraform from scratch:
+These instructions also explain how to get started with Terraform from scratch.
+
+### Prerequisites:
+* Rediscloud account
+* terraform (install explanation below)
+* VS Code
+
 
 Based on the following instructions:
 
