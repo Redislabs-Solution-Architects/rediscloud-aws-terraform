@@ -1,42 +1,34 @@
 # rediscloud-terraform
 How to deploy a rediscloud subscription from terraform.
 
-These instructions also explain how to get started with Terraform from scratch:
+# Create a Redis Cloud subscription from Terraform
 
-Based on the following instructions:
+#### Prerequisites
+* aws account
+* aws-cli (aws access key and secret key)
+* redis cloud account ([link](https://redis.com/try-free/))
+  * redis cloud API Key and Secret (*instructions below*)
+* terraform installed on local machine
+* VS Code
 
-[https://redislabs.com/blog/provision-manage-redis-enterprise-cloud-hashicorp-terraform/](https://redislabs.com/blog/provision-manage-redis-enterprise-cloud-hashicorp-terraform/)
+Once you have the prerequisties we can get started.
+
+1. Navigate to your Redis Cloud Account ([link](https://app.redislabs.com/))
+2. Log in and click "Access Management"
+3. Click API Keys
+![Alt text](images/rc-accessmanagment-1.png?raw=true "Title")
+4. Click the "+" icon and create a new API Key User.
+![Alt text](images/rc-accessmanagment-2.png?raw=true "Title")
+5. Save the API Account Key & the Secret Key information
 
 
-# Download Terraform: (Mac OS)
+## Redis Cloud Account Steps
 
-There are two ways to do this, the second method worked better for me to link with VS code.
-## Method 1:
-* Download the Terraform CLI:
-  * https://www.terraform.io/downloads.html
-* Open the zip file:
-  * (if you see an error saying something about security settings follow these instructions)
-    * https://github.com/hashicorp/terraform/issues/23033
-    * Just control click the terraform unix executable and click open.
-      * This bypasses some security setting.
-  * Great you should be good to go!
+You will need a Redis Cloud API key and secret key.
 
-## Method 2:
-https://learn.hashicorp.com/tutorials/terraform/install-cli
-* Open terminal:
-```bash
-    > echo #PATH
-    > mv ~/Downloads/terraform /usr/local/bin/
-    > terraform -help
-```
 
-* Clone this repo and open in VS Code
-  * If you click into a terraform file VS Code will prompt you to download HashiCorp Terraform (Extension)
-  * Do it and you should be good to go!
-    * If you see and error about "Terraform (CLI) is required. Please install Terraform or make it avialable in $PATH" then follow the above instructions again.
 
-# Create a RedisCloud subscription from Terraform
-Now that we have terraform installed and working with VS code we can get started.
+![Alt text](image/TF-AA-DEMO.png?raw=true "Title")
 
 * Head to your Redis Enterprise Cloud account:
 * Get your Cloud API Access Key and Secret Key.
