@@ -26,10 +26,6 @@ Once you have the prerequisties we can get started.
 
 You will need a Redis Cloud API key and secret key.
 
-
-
-![Alt text](image/TF-AA-DEMO.png?raw=true "Title")
-
 * Head to your Redis Enterprise Cloud account:
 * Get your Cloud API Access Key and Secret Key.
 * Place these keys in the terraform.tfvars file.
