@@ -16,9 +16,13 @@ Once you have the prerequisties we can get started.
 1. Navigate to your Redis Cloud Account ([link](https://app.redislabs.com/))
 2. Log in and click "Access Management"
 3. Click API Keys
+
 ![Alt text](images/rc-accessmanagment-1.png?raw=true "Title")
+
 4. Click the "+" icon and create a new API Key User.
+
 ![Alt text](images/rc-accessmanagment-2.png?raw=true "Title")
+
 5. Save the API Account Key & the Secret Key information
 
 
