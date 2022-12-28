@@ -13,6 +13,7 @@ How to deploy a rediscloud subscription from terraform.
 
 Once you have the prerequisties we can get started.
 
+## Redis Cloud Account Steps
 1. Navigate to your Redis Cloud Account ([link](https://app.redislabs.com/))
 2. Log in and click "Access Management"
 3. Click API Keys
@@ -25,14 +26,7 @@ Once you have the prerequisties we can get started.
 
 5. Save the API Account Key & the Secret Key information
 
-
-## Redis Cloud Account Steps
-
-You will need a Redis Cloud API key and secret key.
-
-* Head to your Redis Enterprise Cloud account:
-* Get your Cloud API Access Key and Secret Key.
-* Place these keys in the terraform.tfvars file.
+6. Place these key info in the terraform.tfvars file.
 
 Copy the variables template. or rename it 'terraform.tfvars'
 ```bash
