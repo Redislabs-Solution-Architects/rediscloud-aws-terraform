@@ -19,11 +19,11 @@ There are four different modules:
       * 3+ Nodes (VMs) with Redis Enterprise software installed to create the Redis Enterprise Cluster
 * `rc-create-db` 
   * (This creates a brand new Redis DB in the newly provisioned Redis Cloud subscription)
-  * This module can be updated after it is run to update and scale the Redis Cloud DB.
+  * This module can be updated after it is run to update and scale the Redis Cloud DB. [Optional Steps](#i-want-to-update-my-existing-db-after-it-is-created)
 * `aws-vpc` 
   * (This creates a brand new AWS VPC)
   * This VPC is supposed to contain the application that will communicate with Redis
-  * If an existing VPC exists, then this can be commented out, (*instructions below*)
+  * If an existing VPC exists, then this can be commented out, (*instructions below*) [Optional Steps](#i-have-an-existing-aws-vpc-i-want-to-use)
 * `rc-aws-vpc-peering` 
   * (This VPC Peers your Redis Cloud Subscription to the newly created or existing AWS VPC)
   * Redis Cloud does most of the work on the VPC peering, but AWS requires a route table addition to the customer AWS Account which requires including the AWS Terraform provider.
@@ -36,7 +36,7 @@ Ok, now that we know what we have, we can get started
 * aws account
 * aws-cli (*aws access-key and secret-key*)
 * redis cloud account ([link](https://redis.com/try-free/))
-  * redis cloud API Key and Secret (*instructions below*)
+  * redis cloud API Key and Secret (*instructions below*) [API & Secret Key](#step-1-redis-cloud-account-steps)
 * terraform installed on local machine
 * VS Code
 
