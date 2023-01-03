@@ -1,5 +1,5 @@
 # rediscloud-terraform
-Deploy a Redis Cloud AWS Subscription and create a new Redis DB using Terraform. 
+Deploy a Redis Cloud AWS Subscription and create a new Redis DB using the Redis Cloud Terraform Provider ([link](https://registry.terraform.io/providers/RedisLabs/rediscloud/latest/docs)). 
 VPC peer your Redis Cloud subscription to a new or existing AWS VPC.
 
 This repo will also create a new AWS VPC from scratch and VPC peering it to Redis Cloud.
@@ -71,7 +71,7 @@ And create a new database in your Redis Cloud subscription.
 
 1. Step 1, utilize the `terraform.tfvars.example` file and replace/fill in the variable values
 
-Copy the variables template. or rename it 'terraform.tfvars'
+Copy the `terraform.tfvars.example` and rename it 'terraform.tfvars'
 ```bash
   cp terraform.tfvars.example terraform.tfvars
 ```
