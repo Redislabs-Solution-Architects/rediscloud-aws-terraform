@@ -170,7 +170,7 @@ If so, you can follow these steps.
 
 Navigate to the `modules.tf` file. Comment out the `vpc-module` module and its outputs.
 By commenting this module and its outputs out, you will **not run** the new VPC creation.
-Please comment out the following moudle and outputs in the `modules.tf` file.
+Please comment out the following module and outputs in the `modules.tf` file.
 
 ```
   ########### VPC Module
@@ -214,12 +214,12 @@ Now that you are not creating a new VPC you will need to enter in your
 existing VPC values into the `rc-aws-vpc-peering` module.
 
 Please find the following info from your existing AWS VPCs
-* aws_customer_application_vpc_region (your existing aws vpcs region)
-* aws_customer_application_aws_account_id (your aws account id)
-* aws_customer_application_vpc_id (your existing aws vpc id)
-* aws_customer_application_vpc_cidr (your existing aws vpc cidr)
+* **aws_customer_application_vpc_region** (your existing aws vpcs region)
+* **aws_customer_application_aws_account_id** (your aws account id)
+* **aws_customer_application_vpc_id** (your existing aws vpc id)
+* **aws_customer_application_vpc_cidr** (your existing aws vpc cidr)
   * **MUST NOT OVERLAP WITH REDIS CLOUD VPC CIDR**
-* aws_vpc_route_table_id (your existing aws vpc route table id)
+* **aws_vpc_route_table_id** (your existing aws vpc route table id)
 
 **and remove `module.aws-vpc` from the depends on.**
 
@@ -242,10 +242,14 @@ module "rc-aws-vpc-peering" {
     aws_vpc_route_table_id                  = 'rt-124df234235'
 
     depends_on = [
-      module.aws-vpc, module.rc-subscription
+      module.rc-subscription
     ]
 }
 ```
+
+Now you can run the terrafrom plan and apply and VPC peer to your existing VPC.
+
+After you are all done, please clean up!
 
 
 ## Cleanup
