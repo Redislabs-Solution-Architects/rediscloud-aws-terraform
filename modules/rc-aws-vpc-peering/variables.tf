@@ -1,7 +1,3 @@
-
-
-
-
 # ##### Subscription Peering
 
 variable "aws_customer_application_vpc_region" {

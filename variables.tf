@@ -27,7 +27,7 @@ variable "subnet_cidr_blocks" {
 #### Declare the list of availability zones
 variable "subnet_azs" {
   type = list(string)
-  default = ["us-west-2a","us-west-2b","us-west-2c"]
+  default = ["us-east-1a","us-east-1b","us-east-1c"]
 }
 
 
@@ -89,114 +89,74 @@ variable "rc_cloud_account_provider_type" {
 ##### Redis Cloud Subscription Variables
 
 variable "rc_region" {
-    description = ""
+    description = "redis cloud aws region"
+    default = "us-east-1"
 }
 
 variable "rc_networking_deployment_cidr" {
     description = "the CIDR of your RedisCloud deployment"
+    default = "10.1.0.0/24"
 }
 
 variable "rc_preferred_availability_zones" {
-    description = ""
+    description = "redis cloud subscription azs"
     type        = list(any)
+    default = ["us-east-1a","us-east-1b","us-east-1c"]
 }
 
 variable "rc_memory_storage" {
-    description = "ram"
+    description = "Memory storage preference: either 'ram' or a combination of 'ram-and-flash'. Default: 'ram'"
     default = "ram"
 }
 
-##### Redis Cloud Subscription Creation Plan Variables
-# variable "average_item_size_in_bytes" {
-#     description = ""
-#     default = 0
-# }
-
-# variable "memory_limit_in_gb" {
-#     description = ""
-#     default = 1
-# }
-
-# variable "quantity" {
-#     description = ""
-#     default = 1
-# }
-
-# variable "replication" {
-#     description = ""
-#     default = false
-# }
-
-# variable "support_oss_cluster_api" {
-#     description = ""
-#     default = false
-# }
-
-# variable "throughput_measurement_by" {
-#     description = ""
-#     default = "operations-per-second"
-# }
-
-# variable "throughput_measurement_value" {
-#     description = ""
-#     default = 1000
-# }
-
-# variable "rc_modules" {
-#     description = ""
-#     type        = list(any)
-#     default = ["RedisJSON", "RedisBloom"]
-# }
-
 ##### Redis Cloud Database Variables
-
 variable "rc_db_average_item_size_in_bytes" {
-    description = ""
+    description = "Relevant only to ram-and-flash clusters. Estimated average size (measured in bytes) of the items stored in the database."
     default = 0
 }
 
 variable "rc_db_external_endpoint_for_oss_cluster_api" {
-    description = ""
+    description = "Should use the external endpoint for open-source (OSS) Cluster API. Can only be enabled if OSS Cluster API support is enabled"
     default = false
 }
 
 variable "rc_db_data_persistence" {
-    description = ""
+    description = "Rate of database data persistence (in persistent storage)"
     default = "none"
 }
 
 variable "rc_db_memory_limit_in_gb" {
-    description = ""
+    description = "Maximum memory usage that will be used for your database."
     default = 1
 }
 
 variable "rc_db_name" {
-    description = ""
+    description = "database name"
     default = "example-db"
 }
 
 variable "rc_db_replication" {
-    description = ""
+    description = "Databases replication. Set to true if any of your databases will use replication."
     default = false
 }
 
 variable "rc_db_support_oss_cluster_api" {
-    description = ""
+    description = "Support Redis open-source (OSS) Cluster API"
     default = false
 }
 
 variable "rc_db_throughput_measurement_by" {
-    description = ""
+    description = "Throughput measurement method that will be used by your database, (either 'number-of-shards' or 'operations-per-second')"
     default = "operations-per-second"
 }
 
 variable "rc_db_throughput_measurement_value" {
-    description = ""
+    description = "Throughput value that will be used by your databases (as applies to selected measurement method)."
     default = 1000
 }
 
 variable "rc_db_modules" {
-    description = ""
+    description = "a list of modules that will be used by the database. Not currently compatible with 'ram-and-flash' memory storage"
     type        = list(map(string))
     default = [
         {

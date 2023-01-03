@@ -59,6 +59,7 @@ output "route-table-id" {
 
 ############################ Redis Cloud Subscription
 #### Provision an empty (no db) Redis Cloud subscription (1 VPC with 3+ Redis Enterprise Nodes (VMs))
+## edit this:
 #### The db paramters are used to define the subscription creation plan
 #### ie. the size (Size and number of Redis Enterprise Nodes)
 module "rc-subscription" {
@@ -71,17 +72,6 @@ module "rc-subscription" {
     rc_region                       = var.rc_region
     rc_networking_deployment_cidr   = var.rc_networking_deployment_cidr
     rc_preferred_availability_zones = var.rc_preferred_availability_zones
-    ########################### Default "creation plan" values set to largest infra for minimum cost flex plan
-    ########################### (Feel free to update)
-    # rc_memory_storage               = var.rc_memory_storage
-    # average_item_size_in_bytes      = var.average_item_size_in_bytes
-    # memory_limit_in_gb              = var.memory_limit_in_gb
-    # quantity                        = var.quantity
-    # replication                     = var.replication
-    # support_oss_cluster_api         = var.support_oss_cluster_api
-    # throughput_measurement_by       = var.throughput_measurement_by
-    # throughput_measurement_value    = var.throughput_measurement_value
-    # rc_modules                      = var.rc_modules
 
     depends_on = [
       data.rediscloud_cloud_account.account

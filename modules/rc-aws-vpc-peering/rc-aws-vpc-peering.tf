@@ -1,25 +1,5 @@
 
-
-#### Redis Cloud Subscription Peering
-
-# # Configure the rediscloud provider:
-# provider "rediscloud" {
-#     api_key = var.rediscloud_creds[0]
-#     secret_key = var.rediscloud_creds[1]
-# }
-
-# ## enter customers existing subscription name here
-# data "rediscloud_subscription" "example" {
-#   name = var.rediscloud_subscription_name
-# }
-
-# ## if you want to see the output of the sub id
-# output "rediscloud_subscription" {
-#   value = data.rediscloud_subscription.example.id
-# }
-# output "rediscloud_subscription_networking_deployment_cidr" {
-#   value = data.rediscloud_subscription.example.cloud_provider[0].region
-# }
+### Redis Cloud Subscription peering
 
 resource "rediscloud_subscription_peering" "example" {
    subscription_id = var.rediscloud_subscription_id
@@ -38,13 +18,6 @@ resource "aws_vpc_peering_connection_accepter" "example-peering" {
 ### AWS Terrafrom to add route table in customer AWS environment
 ### ADD ROUTE TABLE ROUTE
 
-# # AWS region and AWS key pair
-# provider "aws" {
-#   region = var.aws_vpc_region
-#   access_key = var.aws_creds[0]
-#   secret_key = var.aws_creds[1]
-# }
-
 
 # Declare the data source
 data "aws_vpc_peering_connection" "pc" {
@@ -53,7 +26,7 @@ data "aws_vpc_peering_connection" "pc" {
   depends_on = [aws_vpc_peering_connection_accepter.example-peering]
 }
 
-## if you want to see the output of the sub id
+## output of the sub id
 output "aws_vpc_peering_connection" {
   value = data.aws_vpc_peering_connection.pc.id
 }
