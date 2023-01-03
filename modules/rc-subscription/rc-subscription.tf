@@ -1,15 +1,8 @@
 
-
-
 data "rediscloud_payment_method" "card" {
   card_type = var.cc_type
   last_four_numbers = var.cc_last_4
 }
-
-# data "rediscloud_cloud_account" "account" {
-#   exclude_internal_account = true
-#   provider_type = "AWS"
-# }
 
 resource "rediscloud_subscription" "example" {
 
