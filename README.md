@@ -2,8 +2,8 @@
 Deploy a Redis Cloud AWS Subscription and create a new Redis DB using Terraform. 
 VPC peer your Redis Cloud subscription to a new or existing AWS VPC.
 
-These instructions include create a new AWS VPC from scratch and VPC peering it to Redis Cloud.
-If you have an existing AWS VPC you would like to use, please navigate to the **Optional Steps**
+This repo will also create a new AWS VPC from scratch and VPC peering it to Redis Cloud.
+If you have an existing AWS VPC you would like to use, please navigate to the [Optional Steps](#i-have-an-existing-aws-vpc-i-want-to-use)
 to update the inputs.
 
 # Overview
