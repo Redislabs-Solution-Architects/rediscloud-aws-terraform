@@ -70,8 +70,18 @@ module "rc-subscription" {
     cc_type                         = var.cc_type
     cc_last_4                       = var.cc_last_4
     rc_region                       = var.rc_region
-    rc_networking_deployment_cidr   = var.rc_networking_deployment_cidr
+    rc_networking_deployment_cidr   = var.rc_networking_deployment_cidr #MUST BE /24 (MUST NOT OVERLAP WITH AWS Customer VPC CIDR)
     rc_preferred_availability_zones = var.rc_preferred_availability_zones
+    ######### CREATION PLAN (defines the size of cluster, does not deploy a db)
+    #### Updating these variables is optional.
+    # rc_cp_average_item_size_in_bytes      = var.rc_cp_average_item_size_in_bytes
+    # rc_cp_memory_limit_in_gb              = var.rc_cp_memory_limit_in_gb
+    # rc_cp_quantity                        = var.rc_cp_quantity
+    # rc_cp_replication                     = var.rc_cp_replication
+    # rc_cp_support_oss_cluster_api         = var.rc_cp_support_oss_cluster_api
+    # rc_cp_throughput_measurement_by       = var.rc_cp_throughput_measurement_by
+    # rc_cp_throughput_measurement_value    = var.rc_cp_throughput_measurement_value
+    # rc_cp_modules                         = var.rc_cp_modules
 
     depends_on = [
       data.rediscloud_cloud_account.account
