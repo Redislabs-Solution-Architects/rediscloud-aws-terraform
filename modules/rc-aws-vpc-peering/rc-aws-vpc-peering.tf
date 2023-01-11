@@ -21,9 +21,11 @@ resource "aws_vpc_peering_connection_accepter" "example-peering" {
 
 # Declare the data source
 data "aws_vpc_peering_connection" "pc" {
-  peer_vpc_id = var.aws_customer_application_vpc_id
-  status = "active"
-  depends_on = [aws_vpc_peering_connection_accepter.example-peering]
+  peer_vpc_id     = var.aws_customer_application_vpc_id
+  peer_cidr_block = var.aws_customer_application_vpc_cidr #AWS Customer VPC CIDR block
+  cidr_block      = var.rc_networking_deployment_cidr #Redis Cloud Subscription VPC CIDR block
+  status          = "active"
+  depends_on      = [aws_vpc_peering_connection_accepter.example-peering]
 }
 
 ## output of the sub id
